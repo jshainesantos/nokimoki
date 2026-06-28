@@ -1,0 +1,70 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #FDF6EE;
+  --bg-alt: #FFF3E6;
+  --surface: #FFFAF5;
+  --primary: #E8714A;
+  --primary-dark: #C85A35;
+  --primary-light: #F4A27A;
+  --secondary: #F4A261;
+  --accent: #4BAB8C;
+  --accent-dark: #3A8A6E;
+  --text: #3D2B1F;
+  --text-muted: #9E7A6A;
+  --text-light: #BFA89A;
+  --border: #EDD9C8;
+  --shadow-sm: 0 2px 8px rgba(61, 43, 31, 0.08);
+  --shadow-md: 0 4px 16px rgba(61, 43, 31, 0.12);
+  --shadow-clay: 5px 5px 0px rgba(61, 43, 31, 0.18);
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-xl: 40px;
+  --font: 'Nunito', sans-serif;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#app {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  font-family: var(--font);
+  cursor: pointer;
+  border: none;
+  background: none;
+  touch-action: manipulation;
+}
+
+button:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
