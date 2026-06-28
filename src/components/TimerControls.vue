@@ -1,7 +1,5 @@
 <script setup>
-import IconReset from '../assets/icons/IconReset.vue'
-import IconPlay from '../assets/icons/IconPlay.vue'
-import IconPause from '../assets/icons/IconPause.vue'
+import { IconReset, IconPlay, IconPause } from '@/components/icons'
 
 defineProps({
   isRunning: { type: Boolean, default: false },

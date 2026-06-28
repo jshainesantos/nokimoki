@@ -1,5 +1,5 @@
 <script setup>
-import IconClose from '../assets/icons/IconClose.vue'
+import { IconClose } from '@/components/icons'
 
 const props = defineProps({
   settings: { type: Object, required: true },

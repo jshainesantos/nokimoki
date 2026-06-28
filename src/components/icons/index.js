@@ -1,0 +1,7 @@
+export { default as IconClock } from './IconClock.vue'
+export { default as IconClose } from './IconClose.vue'
+export { default as IconPause } from './IconPause.vue'
+export { default as IconPlay } from './IconPlay.vue'
+export { default as IconReset } from './IconReset.vue'
+export { default as IconSettings } from './IconSettings.vue'
+export { default as IconSun } from './IconSun.vue'
