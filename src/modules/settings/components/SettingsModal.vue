@@ -1,24 +1,10 @@
 <script setup>
 import { IconClose } from '@/components/icons'
 
-const props = defineProps({
+defineProps({
   settings: { type: Object, required: true },
 })
-const emit = defineEmits(['close', 'update'])
-
-function update(key, value) {
-  emit('update', { key, value })
-}
-
-function onDuration(key, raw) {
-  const val = Math.min(99, Math.max(1, parseInt(raw) || 1))
-  update(key, val)
-}
-
-function onSessions(raw) {
-  const val = Math.min(8, Math.max(1, parseInt(raw) || 1))
-  update('sessionsBeforeLongBreak', val)
-}
+defineEmits(['close', 'update'])
 </script>
 
 <template>
@@ -41,7 +27,7 @@ function onSessions(raw) {
               <input
                 type="number" min="1" max="99"
                 :value="settings.focusDuration"
-                @change="e => onDuration('focusDuration', e.target.value)"
+                @change="e => $emit('update', { key: 'focusDuration', value: e.target.value })"
                 class="num-input"
               />
               <span class="unit">min</span>
@@ -53,7 +39,7 @@ function onSessions(raw) {
               <input
                 type="number" min="1" max="99"
                 :value="settings.shortBreakDuration"
-                @change="e => onDuration('shortBreakDuration', e.target.value)"
+                @change="e => $emit('update', { key: 'shortBreakDuration', value: e.target.value })"
                 class="num-input"
               />
               <span class="unit">min</span>
@@ -65,7 +51,7 @@ function onSessions(raw) {
               <input
                 type="number" min="1" max="99"
                 :value="settings.longBreakDuration"
-                @change="e => onDuration('longBreakDuration', e.target.value)"
+                @change="e => $emit('update', { key: 'longBreakDuration', value: e.target.value })"
                 class="num-input"
               />
               <span class="unit">min</span>
@@ -77,7 +63,7 @@ function onSessions(raw) {
               <input
                 type="number" min="1" max="8"
                 :value="settings.sessionsBeforeLongBreak"
-                @change="e => onSessions(e.target.value)"
+                @change="e => $emit('update', { key: 'sessionsBeforeLongBreak', value: e.target.value })"
                 class="num-input"
               />
             </div>
@@ -92,7 +78,7 @@ function onSessions(raw) {
             <button
               class="toggle"
               :class="{ active: settings.alarmEnabled }"
-              @click="update('alarmEnabled', !settings.alarmEnabled)"
+              @click="$emit('update', { key: 'alarmEnabled', value: !settings.alarmEnabled })"
               :aria-pressed="settings.alarmEnabled"
             >
               <span class="thumb" />
@@ -104,7 +90,7 @@ function onSessions(raw) {
               <input
                 type="range" min="0" max="100"
                 :value="Math.round(settings.alarmVolume * 100)"
-                @input="e => update('alarmVolume', parseInt(e.target.value) / 100)"
+                @input="e => $emit('update', { key: 'alarmVolume', value: e.target.value })"
                 :disabled="!settings.alarmEnabled"
                 class="slider"
               />
@@ -121,7 +107,7 @@ function onSessions(raw) {
             <button
               class="toggle"
               :class="{ active: settings.autoStart }"
-              @click="update('autoStart', !settings.autoStart)"
+              @click="$emit('update', { key: 'autoStart', value: !settings.autoStart })"
               :aria-pressed="settings.autoStart"
             >
               <span class="thumb" />

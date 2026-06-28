@@ -29,8 +29,16 @@ const modes = computed(() => ({
   long:  { label: 'Long Break',  duration: settings.longBreakDuration * 60,  color: '#6B8DE8' },
 }))
 
+const CLAMP = {
+  focusDuration:        v => Math.min(99, Math.max(1, parseInt(v) || 1)),
+  shortBreakDuration:   v => Math.min(99, Math.max(1, parseInt(v) || 1)),
+  longBreakDuration:    v => Math.min(99, Math.max(1, parseInt(v) || 1)),
+  sessionsBeforeLongBreak: v => Math.min(8, Math.max(1, parseInt(v) || 1)),
+  alarmVolume:          v => parseInt(v) / 100,
+}
+
 function updateSetting(key, value) {
-  settings[key] = value
+  settings[key] = CLAMP[key] ? CLAMP[key](value) : value
   localStorage.setItem(STORAGE_KEY, JSON.stringify({ ...settings }))
 }
 
