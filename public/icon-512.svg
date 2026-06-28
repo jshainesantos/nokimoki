@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="110" fill="#FDF6EE"/>
+  <!-- Stem -->
+  <path d="M240 138 C224 64 310 32 320 90" stroke="#6B4226" stroke-width="18" stroke-linecap="round" fill="none"/>
+  <!-- Leaf -->
+  <ellipse cx="294" cy="68" rx="48" ry="30" fill="#4BAB8C" transform="rotate(-30 294 68)"/>
+  <!-- Tomato body -->
+  <circle cx="256" cy="320" r="170" fill="#E8714A"/>
+  <!-- Highlight -->
+  <ellipse cx="196" cy="240" rx="44" ry="70" fill="rgba(255,255,255,0.2)" transform="rotate(-15 196 240)"/>
+  <!-- Segments -->
+  <path d="M256 150 Q182 256 256 490" stroke="rgba(0,0,0,0.07)" stroke-width="10" fill="none"/>
+  <path d="M256 150 Q330 256 256 490" stroke="rgba(0,0,0,0.07)" stroke-width="10" fill="none"/>
+</svg>
