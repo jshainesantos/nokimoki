@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from 'vue'
+import { IconStar } from '@/components/icons'
 
 const props = defineProps({
   completed: { type: Number, default: 0 },
@@ -23,9 +24,7 @@ const sets = computed(() => Math.floor(props.completed / 4))
     </div>
     <p class="sets" v-if="sets > 0">
       {{ sets }} set{{ sets !== 1 ? 's' : '' }} complete
-      <svg class="sets-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" fill="currentColor" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
-      </svg>
+      <IconStar class="sets-icon" />
     </p>
   </div>
 </template>

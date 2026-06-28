@@ -1,6 +1,7 @@
 <script setup>
 defineProps({
   current: { type: String, default: 'work' },
+  modes: { type: Object, required: true },
 })
 defineEmits(['select'])
 </script>
@@ -8,7 +9,7 @@ defineEmits(['select'])
 <template>
   <nav class="mode-bar" role="tablist" aria-label="Timer mode">
     <button
-      v-for="(label, key) in { work: 'Focus', short: 'Short Break', long: 'Long Break' }"
+      v-for="(mode, key) in modes"
       :key="key"
       class="mode-btn"
       :class="{ active: current === key }"
@@ -16,7 +17,7 @@ defineEmits(['select'])
       :aria-selected="current === key"
       @click="$emit('select', key)"
     >
-      {{ label }}
+      {{ mode.label }}
     </button>
   </nav>
 </template>

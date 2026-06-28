@@ -43,7 +43,7 @@ function onSettingUpdate({ key, value }) {
     </header>
 
     <div class="content">
-      <ModeSelector :current="currentMode" @select="setMode" />
+      <ModeSelector :current="currentMode" :modes="modes" @select="setMode" />
 
       <div class="timer-area">
         <MascotCharacter :state="mascotState" :mode="currentMode" />
