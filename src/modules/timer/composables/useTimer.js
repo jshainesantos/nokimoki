@@ -1,5 +1,5 @@
 import { ref, computed, onUnmounted, watch } from 'vue'
-import { useAlarm } from '@/composables/useAlarm.js'
+import { useAlarm } from '@/modules/timer/composables/useAlarm.js'
 
 export function useTimer(settings, modes) {
   const { play: playAlarm } = useAlarm()

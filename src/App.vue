@@ -1,13 +1,7 @@
 <script setup>
 import { ref } from 'vue'
-import { useSettings } from '@/composables/useSettings.js'
-import { useTimer } from '@/composables/useTimer.js'
-import MascotCharacter from '@/components/MascotCharacter.vue'
-import TimerRing from '@/components/TimerRing.vue'
-import TimerControls from '@/components/TimerControls.vue'
-import SessionDots from '@/components/SessionDots.vue'
-import ModeSelector from '@/components/ModeSelector.vue'
-import SettingsModal from '@/components/SettingsModal.vue'
+import { useTimer, TimerRing, TimerControls, MascotCharacter, ModeSelector, SessionDots } from '@/modules/timer'
+import { useSettings, SettingsModal } from '@/modules/settings'
 import { IconClock, IconSettings, IconSun } from '@/components/icons'
 
 const { settings, modes, updateSetting } = useSettings()
