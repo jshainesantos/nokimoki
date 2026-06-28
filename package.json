@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/nunito": "^5.2.7",
     "vue": "^3.5.38"
   },
   "devDependencies": {

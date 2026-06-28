@@ -64,7 +64,7 @@ const sets = computed(() => Math.floor(props.completed / 4))
 .dot.filled {
   background: var(--primary);
   border-color: var(--primary-dark);
-  box-shadow: 2px 2px 0px rgba(61,43,31,0.15);
+  box-shadow: 2px 2px 0px rgba(var(--text-rgb),0.15);
 }
 
 .dot.current {

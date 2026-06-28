@@ -137,7 +137,7 @@ function onSessions(raw) {
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(61, 43, 31, 0.35);
+  background: rgba(var(--text-rgb), 0.35);
   backdrop-filter: blur(4px);
   z-index: 100;
   display: flex;
@@ -158,7 +158,7 @@ function onSessions(raw) {
   width: 100%;
   max-width: 560px;
   padding: 28px 24px 40px;
-  box-shadow: 0 -8px 32px rgba(61, 43, 31, 0.15);
+  box-shadow: 0 -8px 32px rgba(var(--text-rgb), 0.15);
   animation: slide-up 0.25s ease;
   max-height: 90dvh;
   overflow-y: auto;

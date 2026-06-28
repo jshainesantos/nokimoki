@@ -52,7 +52,7 @@ defineEmits(['select'])
 .mode-btn.active {
   background: var(--surface);
   color: var(--primary);
-  box-shadow: var(--shadow-sm), 2px 2px 0px rgba(61,43,31,0.1);
+  box-shadow: var(--shadow-sm), 2px 2px 0px rgba(var(--text-rgb),0.1);
   font-weight: 800;
 }
 

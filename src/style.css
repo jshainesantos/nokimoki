@@ -15,6 +15,7 @@
   --accent: #4BAB8C;
   --accent-dark: #3A8A6E;
   --text: #3D2B1F;
+  --text-rgb: 61, 43, 31;
   --text-muted: #9E7A6A;
   --text-light: #BFA89A;
   --border: #EDD9C8;
@@ -25,7 +26,7 @@
   --radius-md: 20px;
   --radius-lg: 28px;
   --radius-xl: 40px;
-  --font: 'Nunito', sans-serif;
+  --font: 'Nunito Variable', 'Nunito', sans-serif;
 }
 
 html {

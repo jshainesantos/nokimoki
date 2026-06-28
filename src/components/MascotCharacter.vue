@@ -35,7 +35,7 @@ const mouthExpression = computed(() => {
       aria-label="Mascot character"
     >
       <!-- Shadow -->
-      <ellipse cx="60" cy="136" rx="28" ry="6" fill="rgba(61,43,31,0.12)" />
+      <ellipse cx="60" cy="136" rx="28" ry="6" fill="rgba(var(--text-rgb),0.12)" />
 
       <!-- Stem -->
       <path
@@ -173,7 +173,7 @@ const mouthExpression = computed(() => {
 .mascot {
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 6px 12px rgba(61,43,31,0.15));
+  filter: drop-shadow(0 6px 12px rgba(var(--text-rgb),0.15));
 }
 
 /* idle bounce */

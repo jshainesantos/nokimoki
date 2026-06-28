@@ -32,7 +32,7 @@ const dashoffset = computed(() => CIRC * (1 - props.progress))
         :cy="SIZE / 2"
         :r="R"
         fill="none"
-        stroke="#EDD9C8"
+        stroke="var(--border)"
         :stroke-width="STROKE"
         stroke-linecap="round"
       />
@@ -80,7 +80,7 @@ const dashoffset = computed(() => CIRC * (1 - props.progress))
   inset: 0;
   width: 100%;
   height: 100%;
-  filter: drop-shadow(0 4px 12px rgba(61,43,31,0.1));
+  filter: drop-shadow(0 4px 12px rgba(var(--text-rgb),0.1));
 }
 
 .arc {
