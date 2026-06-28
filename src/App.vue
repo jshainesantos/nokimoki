@@ -8,6 +8,9 @@ import TimerControls from './components/TimerControls.vue'
 import SessionDots from './components/SessionDots.vue'
 import ModeSelector from './components/ModeSelector.vue'
 import SettingsModal from './components/SettingsModal.vue'
+import IconClock from './assets/icons/IconClock.vue'
+import IconSettings from './assets/icons/IconSettings.vue'
+import IconSun from './assets/icons/IconSun.vue'
 
 const { settings, modes, updateSetting } = useSettings()
 const {
@@ -28,11 +31,7 @@ function onSettingUpdate({ key, value }) {
   <main class="app">
     <header class="header">
       <span class="logo-text">
-        <svg class="logo-icon" viewBox="0 0 24 24" fill="none">
-          <circle cx="12" cy="13" r="8" fill="currentColor" opacity="0.15" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M12 9v4l2.5 2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M12 5C12 5 13.5 3 16 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
+        <IconClock class="logo-icon" />
         NokiMoki
       </span>
       <div class="header-right">
@@ -40,10 +39,7 @@ function onSettingUpdate({ key, value }) {
           {{ sessionsDone }} done today
         </span>
         <button class="settings-btn" @click="showSettings = true" aria-label="Open settings">
-          <svg viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
+          <IconSettings />
         </button>
       </div>
     </header>
@@ -72,10 +68,7 @@ function onSettingUpdate({ key, value }) {
 
       <p class="tip" v-if="!isRunning && currentMode !== 'work'">
         Take a breather, you earned it
-        <svg class="tip-icon" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <circle cx="12" cy="12" r="4" fill="currentColor" opacity="0.2" stroke="currentColor" stroke-width="1.5"/>
-        </svg>
+        <IconSun class="tip-icon" />
       </p>
     </div>
   </main>

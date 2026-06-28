@@ -1,4 +1,8 @@
 <script setup>
+import IconReset from '../assets/icons/IconReset.vue'
+import IconPlay from '../assets/icons/IconPlay.vue'
+import IconPause from '../assets/icons/IconPause.vue'
+
 defineProps({
   isRunning: { type: Boolean, default: false },
 })
@@ -13,10 +17,7 @@ defineEmits(['toggle', 'reset'])
       aria-label="Reset timer"
       title="Reset"
     >
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
-        <path d="M3 3v5h5" />
-      </svg>
+      <IconReset style="width: 22px; height: 22px;" />
     </button>
 
     <button
@@ -24,15 +25,8 @@ defineEmits(['toggle', 'reset'])
       @click="$emit('toggle')"
       :aria-label="isRunning ? 'Pause timer' : 'Start timer'"
     >
-      <!-- Play icon -->
-      <svg v-if="!isRunning" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <polygon points="5,3 19,12 5,21" />
-      </svg>
-      <!-- Pause icon -->
-      <svg v-else width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <rect x="6" y="4" width="4" height="16" rx="1" />
-        <rect x="14" y="4" width="4" height="16" rx="1" />
-      </svg>
+      <IconPlay v-if="!isRunning" style="width: 32px; height: 32px;" />
+      <IconPause v-else style="width: 32px; height: 32px;" />
     </button>
 
     <!-- Spacer to balance reset button -->

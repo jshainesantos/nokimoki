@@ -1,4 +1,6 @@
 <script setup>
+import IconClose from '../assets/icons/IconClose.vue'
+
 const props = defineProps({
   settings: { type: Object, required: true },
 })
@@ -25,9 +27,7 @@ function onSessions(raw) {
       <div class="modal-header">
         <h2 class="modal-title">Settings</h2>
         <button class="close-btn" @click="$emit('close')" aria-label="Close settings">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
+          <IconClose />
         </button>
       </div>
 
