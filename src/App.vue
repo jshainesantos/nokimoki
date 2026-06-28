@@ -7,8 +7,8 @@ import { IconClock, IconSettings, IconSun } from '@/components/icons'
 const { settings, modes, updateSetting } = useSettings()
 const {
   currentMode, isRunning,
-  completedPomodoros, sessionsDone, mascotState,
-  mode, progress, minutes, seconds,
+  sessionsDone, mascotState,
+  mode, progress, minutes, seconds, cycle, sets,
   setMode, toggleTimer, resetTimer,
 } = useTimer(settings, modes)
 
@@ -56,7 +56,7 @@ function onSettingUpdate({ key, value }) {
         @reset="resetTimer"
       />
 
-      <SessionDots :completed="completedPomodoros" />
+      <SessionDots :cycle="cycle" :sets="sets" />
 
       <p class="tip" v-if="!isRunning && currentMode !== 'work'">
         Take a breather, you earned it

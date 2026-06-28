@@ -1,13 +1,10 @@
 <script setup>
-import { computed } from 'vue'
 import { IconStar } from '@/components/icons'
 
-const props = defineProps({
-  completed: { type: Number, default: 0 },
+defineProps({
+  cycle: { type: Number, default: 0 },
+  sets: { type: Number, default: 0 },
 })
-
-const cycle = computed(() => props.completed % 4)
-const sets = computed(() => Math.floor(props.completed / 4))
 </script>
 
 <template>

@@ -16,6 +16,8 @@ export function useTimer(settings, modes) {
   const progress = computed(() => 1 - timeLeft.value / mode.value.duration)
   const minutes = computed(() => String(Math.floor(timeLeft.value / 60)).padStart(2, '0'))
   const seconds = computed(() => String(timeLeft.value % 60).padStart(2, '0'))
+  const cycle = computed(() => completedPomodoros.value % 4)
+  const sets = computed(() => Math.floor(completedPomodoros.value / 4))
 
   function setMode(m) {
     if (isRunning.value) stopTimer()
@@ -85,7 +87,7 @@ export function useTimer(settings, modes) {
   return {
     currentMode, timeLeft, isRunning,
     completedPomodoros, sessionsDone, mascotState,
-    mode, progress, minutes, seconds,
+    mode, progress, minutes, seconds, cycle, sets,
     setMode, startTimer, stopTimer, resetTimer, toggleTimer,
   }
 }

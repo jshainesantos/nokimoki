@@ -1,6 +1,4 @@
 <script setup>
-import { computed } from 'vue'
-
 const props = defineProps({
   progress: { type: Number, default: 0 },
   minutes: { type: String, default: '25' },
@@ -13,7 +11,6 @@ const SIZE = 260
 const STROKE = 16
 const R = (SIZE - STROKE) / 2
 const CIRC = 2 * Math.PI * R
-const dashoffset = computed(() => CIRC * (1 - props.progress))
 </script>
 
 <template>
@@ -46,7 +43,7 @@ const dashoffset = computed(() => CIRC * (1 - props.progress))
         :stroke-width="STROKE"
         stroke-linecap="round"
         :stroke-dasharray="CIRC"
-        :stroke-dashoffset="dashoffset"
+        :stroke-dashoffset="CIRC * (1 - props.progress)"
         transform="rotate(-90, 130, 130)"
         class="arc"
       />
